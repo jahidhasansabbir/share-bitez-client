@@ -5,6 +5,7 @@ import axios from "axios";
 import AvailableFood from "../pages/Available-Food/AvailableFood";
 import AddFood from "../pages/Add-A-Food/AddFood";
 import Register from "../pages/Register";
+import Login from "../pages/Login";
 
 export const router =createBrowserRouter([
     {
@@ -28,6 +29,10 @@ export const router =createBrowserRouter([
                 path: 'register',
                 Component: Register
                 
+            },
+            {
+                path: 'login',
+                Component: Login
             }
 
         ]

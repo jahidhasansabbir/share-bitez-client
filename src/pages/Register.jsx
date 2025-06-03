@@ -1,15 +1,14 @@
-import React, { use, useState} from "react";
-// import { NavLink, useNavigate } from "react-router";
-// import Swal from "sweetalert2";
-import { AuthContext } from "../context/AuthContext";
+import React, { use, useState } from "react";
 import { NavLink, useNavigate } from "react-router";
+import { AuthContext } from "../context/AuthContext";
 import Swal from "sweetalert2";
 
 const Register = () => {
-  const { register,updateUserProfile, userGoogleSignIn } =
+  // const { userGoogleSignIn, createUserWithEmailPass, updateUserInfo } =
+  //   use(AuthContext);
+  const { register, updateUserProfile, userGoogleSignIn } =
     use(AuthContext);
   const [error, setError] = useState("");
-  console.log(error);
   const navigate = useNavigate();
 
   const sweetAlert = () => {
@@ -29,15 +28,13 @@ const Register = () => {
       showConfirmButton: true,
     });
   };
-  console.log(register);
-  console.log(register);
   const handleSignUpWithEmail = (e) => {
     e.preventDefault();
     const name = e.target.name.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
     const photoUrl = e.target.photoUrl.value;
-    const profileInfo = { name, photoUrl }
+    const profileInfo = { name, photoUrl };
     if (!/[A-Z]/.test(password)) {
       return setError("Password must contain at least one uppercase letter.");
     } else if (!/[a-z]/.test(password)) {
@@ -46,13 +43,11 @@ const Register = () => {
       return setError("Password must be at least 6 characters long.");
     } else {
       register(email, password)
-      .then((data)=>{
-        console.log(data);
-          updateUserProfile(profileInfo)
-          navigate('/')
-      })
-      .catch(err=>console.log(err))
-
+        .then(() => {
+          updateUserProfile(profileInfo);
+          sweetAlert();
+        })
+        .catch((err) => errorAlert(err.message));
     }
   };
   const handleGoogleSignIn = () => {
@@ -94,7 +89,7 @@ const Register = () => {
           <div>
             <a className="link link-hover">Forgot password?</a>
           </div>
-          {/* <p className="text-red-600">{error}</p> */}
+          <p className="text-red-600">{error}</p>
           <button className="btn btn-neutral mt-4">Register</button>
         </form>
         <p className="text-center text-gray-400">or,</p>
