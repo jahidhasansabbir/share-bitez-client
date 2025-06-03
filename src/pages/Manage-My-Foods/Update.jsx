@@ -1,12 +1,18 @@
 import axios from "axios";
-import React, { use } from "react";
 import { AuthContext } from "../../context/AuthContext";
+import { useLoaderData, useNavigate, useParams } from "react-router";
 
-const AddFood = () => {
-  const {user} = use(AuthContext);
-  const {displayName, photoURL, email} = user;
-  const donor = { name: displayName , email: email, image: photoURL };
-
+const Update = () => {
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const {
+    foodName,
+    foodImage,
+    foodQuantity,
+    pickupLocation,
+    expireDate,
+    additionalNotes,
+  } = useLoaderData();
   const handleAddFood = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -16,7 +22,6 @@ const AddFood = () => {
     const foodImage = form.foodImage.value;
     const expireDate = form.expireDate.value;
     const additionalNotes = form.additionalNotes.value;
-    const foodStatus = "available";
     const food = {
       foodName,
       foodImage,
@@ -24,15 +29,11 @@ const AddFood = () => {
       pickupLocation,
       expireDate,
       additionalNotes,
-      donor,
-      foodStatus,
     };
-    axios.post(`${import.meta.env.VITE_server}/foods`, food)
-      .then((res) => {
-        if(res.data.insertedId){
-            food._id=res.data.insertedId;
-            form.reset();
-        }
+    axios
+      .patch(`${import.meta.env.VITE_server}/update/${id}`, food)
+      .then(() => {
+        navigate(-1)
       });
   };
   return (
@@ -42,6 +43,7 @@ const AddFood = () => {
           <div className="flex flex-col">
             <label className="label">Food Name</label>
             <input
+              defaultValue={foodName}
               required
               type="text"
               name="foodName"
@@ -54,6 +56,7 @@ const AddFood = () => {
             <label className="label">Food Image</label>
             <input
               required
+              defaultValue={foodImage}
               type="text"
               name="foodImage"
               className="input w-full"
@@ -64,6 +67,7 @@ const AddFood = () => {
           <div className="flex flex-col">
             <label className="label">Food Quantity</label>
             <input
+              defaultValue={foodQuantity}
               required
               type="text"
               name="foodQuantity"
@@ -77,22 +81,23 @@ const AddFood = () => {
             <input
               type="text"
               required
+              defaultValue={pickupLocation}
               name="pickupLocation"
               className="input w-full"
               placeholder="Enter pickup location"
             />
           </div>
-
-          <div className="flex flex-col">
-            <label className="label">Expired Date</label>
-            <input
-              type="date"
-              required
-              name="expireDate"
-              className="input w-full"
-              placeholder="Select date and time"
-            />
-          </div>
+        </div>
+        <div className="flex flex-col">
+          <label className="label">Expired Date</label>
+          <input
+            type="date"
+            required
+            defaultValue={expireDate}
+            name="expireDate"
+            className="input w-full"
+            placeholder="Select date and time"
+          />
         </div>
         <div className="flex flex-col w-full">
           <label className="label">Additional Notes</label>
@@ -100,6 +105,7 @@ const AddFood = () => {
             className="textarea h-24 w-full"
             name="additionalNotes"
             required
+            defaultValue={additionalNotes}
             placeholder="Describe..."
           ></textarea>
         </div>
@@ -109,4 +115,4 @@ const AddFood = () => {
   );
 };
 
-export default AddFood;
+export default Update;

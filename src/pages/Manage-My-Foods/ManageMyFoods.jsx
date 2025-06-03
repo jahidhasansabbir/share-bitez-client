@@ -8,7 +8,7 @@ const ManageMyFoods = () => {
     const foods = useLoaderData()
     const {user} = use(AuthContext);
     const myFoods = foods.filter(food=>food.donor.email==user.email)
-    console.log(myFoods);
+    
     return (
         <div className="overflow-x-auto w-11/12 mx-auto">
   <table className="table">

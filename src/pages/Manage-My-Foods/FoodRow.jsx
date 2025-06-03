@@ -1,7 +1,10 @@
 import React from "react";
+import { NavLink } from "react-router";
+import Swal from "sweetalert2";
 
 const FoodRow = ({ food }) => {
   const { foodName, foodQuantity, expireDate, pickupLocation, _id } = food;
+  
   return (
     <tr>
       <td className="p-1">
@@ -23,8 +26,12 @@ const FoodRow = ({ food }) => {
       <td className="p-1">{expireDate}</td>
       <td className="p-1">{pickupLocation}</td>
       <th className="flex flex-col gap-1 p-1">
-        <button className="btn btn-ghost btn-xs bg-blue-700 text-white">Update</button>
-        <button className="btn btn-ghost btn-xs bg-red-700 text-white">Delete</button>
+        <button className="btn btn-ghost btn-xs bg-blue-700 text-white">
+          <NavLink to={`/update/${_id}`}>Update</NavLink>
+        </button>
+        <button onClick={handleDeleteFood} className="btn btn-ghost btn-xs bg-red-700 text-white">
+          Delete
+        </button>
       </th>
     </tr>
   );
