@@ -6,6 +6,8 @@ import AvailableFood from "../pages/Available-Food/AvailableFood";
 import AddFood from "../pages/Add-A-Food/AddFood";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
+import FoodDetails from "../pages/Food-Details/FoodDetails";
+import ManageMyFoods from "../pages/Manage-My-Foods/ManageMyFoods";
 
 export const router =createBrowserRouter([
     {
@@ -33,6 +35,16 @@ export const router =createBrowserRouter([
             {
                 path: 'login',
                 Component: Login
+            },
+            {
+                path: 'food/:id',
+                loader: ({params})=>fetch(`${import.meta.env.VITE_server}/food/${params.id}`),
+                Component: FoodDetails
+            },
+            {
+                path: 'manage-my-food',
+                loader: ()=>fetch(`${import.meta.env.VITE_server}/available-foods`),
+                Component: ManageMyFoods
             }
 
         ]

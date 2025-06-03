@@ -7,9 +7,9 @@ const AvailableFood = () => {
     const data = useLoaderData();
     const availableFoods =data.data;
     return (
-        <div>
+        <div className='w-11/12 mx-auto'>
             <h1>AvailableFood</h1>
-            <div>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
                 {
                     availableFoods.map(food=><AvailableFoodCard key={food._id} food={food}></AvailableFoodCard>)
                 }

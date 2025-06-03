@@ -6,7 +6,6 @@ const AddFood = () => {
   const {user} = use(AuthContext);
   const {displayName, photoURL, email} = user;
   const donor = { name: displayName , email: email, image: photoURL };
-    console.log(donor);
   const handleAddFood = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -14,7 +13,7 @@ const AddFood = () => {
     const pickupLocation = form.pickupLocation.value;
     const foodQuantity = form.foodQuantity.value;
     const foodImage = form.foodImage.value;
-    const expiredDateTime = form.expiredDateTime.value;
+    const expireDate = form.expireDate.value;
     const additionalNotes = form.additionalNotes.value;
     const foodStatus = "available";
     const food = {
@@ -22,7 +21,7 @@ const AddFood = () => {
       foodImage,
       foodQuantity,
       pickupLocation,
-      expiredDateTime,
+      expireDate,
       additionalNotes,
       donor,
       foodStatus,
@@ -84,40 +83,15 @@ const AddFood = () => {
           </div>
 
           <div className="flex flex-col">
-            <label className="label">Expired Date/Time</label>
+            <label className="label">Expired Date</label>
             <input
-              type="datetime-local"
+              type="date"
               required
-              name="expiredDateTime"
+              name="expireDate"
               className="input w-full"
               placeholder="Select date and time"
             />
           </div>
-
-          {/* <div className="flex flex-col">
-            <label className="label">Name</label>
-            <input
-              required
-              type="text"
-              name="name"
-              value={displayName}
-              disabled
-              className="input w-full"
-              placeholder=""
-            />
-          </div>
-          <div className="flex flex-col">
-            <label className="label">Email</label>
-            <input
-              required
-              type="email"
-              name="email"
-              value={email}
-              disabled
-              className="input w-full"
-              placeholder="Enter your email"
-            />
-          </div> */}
         </div>
         <div className="flex flex-col w-full">
           <label className="label">Additional Notes</label>
