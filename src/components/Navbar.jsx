@@ -1,12 +1,22 @@
-import React from "react";
+import React, { use } from "react";
 import { NavLink } from "react-router";
+import { AuthContext } from "../context/AuthContext";
 
 const Navbar = () => {
-    const links = <>
-        <li><NavLink to='/'>Home</NavLink></li>
-        <li><NavLink to='/'>Home</NavLink></li>
-        <li><NavLink to='/'>Home</NavLink></li>
+  const { user } = use(AuthContext);
+  const links = (
+    <>
+      <li>
+        <NavLink to="/">Home</NavLink>
+      </li>
+      <li>
+        <NavLink to="/add-a-food">Add a Food</NavLink>
+      </li>
+      <li>
+        <NavLink to="/register">Sign up</NavLink>
+      </li>
     </>
+  );
   return (
     <div className="navbar bg-base-100 w-11/12 mx-auto">
       <div className="navbar-start">
@@ -38,13 +48,24 @@ const Navbar = () => {
         <a className="btn btn-ghost text-xl">daisyUI</a>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-          {links}
-        </ul>
+        <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end">
-        <NavLink to='/sign-up' className="btn">Sign Up</NavLink>
-        <NavLink to='/log-in' className="btn">Log In</NavLink>
+        {user ? (
+          <>
+            <img src={user.photoURL} className="w-10 mr-2" />
+            <NavLink className="btn">Log Out</NavLink>
+          </>
+        ) : (
+          <>
+            <NavLink to="/register" className="btn">
+              Sign Up
+            </NavLink>
+            <NavLink to="/log-in" className="btn">
+              Log In
+            </NavLink>
+          </>
+        )}
       </div>
     </div>
   );

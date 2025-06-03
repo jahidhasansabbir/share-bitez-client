@@ -1,11 +1,11 @@
-import React from 'react';
+
 import { useLoaderData } from 'react-router';
 import AvailableFoodCard from './AvailableFoodCard';
+import { AuthContext } from '../../context/AuthContext';
 
 const AvailableFood = () => {
     const data = useLoaderData();
     const availableFoods =data.data;
-    console.log(availableFoods);
     return (
         <div>
             <h1>AvailableFood</h1>

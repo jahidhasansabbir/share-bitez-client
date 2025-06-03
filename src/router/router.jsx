@@ -3,6 +3,8 @@ import Root from "../layout/Root";
 import Home from "../pages/Home/Home";
 import axios from "axios";
 import AvailableFood from "../pages/Available-Food/AvailableFood";
+import AddFood from "../pages/Add-A-Food/AddFood";
+import Register from "../pages/Register";
 
 export const router =createBrowserRouter([
     {
@@ -14,10 +16,20 @@ export const router =createBrowserRouter([
                 Component:Home
             },
             {
-                path: '/available-foods',
+                path: 'available-foods',
                 loader: ()=>axios(`${import.meta.env.VITE_server}/available-foods`),
                 Component: AvailableFood
+            },
+            {
+                path:'add-a-food',
+                Component: AddFood
+            },
+            {
+                path: 'register',
+                Component: Register
+                
             }
+
         ]
     }
 ])
