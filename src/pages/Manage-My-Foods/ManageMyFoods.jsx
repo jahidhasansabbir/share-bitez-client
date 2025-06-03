@@ -3,12 +3,13 @@ import { use } from 'react';
 import { useLoaderData } from 'react-router';
 import { AuthContext } from '../../context/AuthContext';
 import FoodRow from './FoodRow';
+import { useState } from 'react';
 
 const ManageMyFoods = () => {
     const foods = useLoaderData()
     const {user} = use(AuthContext);
-    const myFoods = foods.filter(food=>food.donor.email==user.email)
-    
+    const filterFoods = foods.filter(food=>food.donor.email==user.email)
+    const [myFoods, setMyFoods] = useState(filterFoods);
     return (
         <div className="overflow-x-auto w-11/12 mx-auto">
   <table className="table">
@@ -23,7 +24,7 @@ const ManageMyFoods = () => {
     </thead>
     <tbody>
       {
-        myFoods.map(food=><FoodRow key={food._id} food={food}></FoodRow>)
+        myFoods.map(food=><FoodRow myFoods={myFoods} setMyFoods={setMyFoods} key={food._id} food={food}></FoodRow>)
       }
     </tbody>
   </table>

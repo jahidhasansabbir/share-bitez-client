@@ -1,10 +1,33 @@
+import axios from "axios";
 import React from "react";
 import { NavLink } from "react-router";
 import Swal from "sweetalert2";
 
-const FoodRow = ({ food }) => {
+const FoodRow = ({ food, setMyFoods, myFoods}) => {
   const { foodName, foodQuantity, expireDate, pickupLocation, _id } = food;
-  
+  const handleDeleteFood = () => {
+      Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          const remainingMyFoods = myFoods.filter(singleFood=>singleFood._id!=_id)
+          setMyFoods(remainingMyFoods)
+          axios.delete(`${import.meta.env.VITE_server}/delete/${_id}`)
+            .then(() => {});
+          Swal.fire({
+            title: "Deleted!",
+            text: "Your post has been deleted.",
+            icon: "success",
+          });
+        }
+      });
+    };
   return (
     <tr>
       <td className="p-1">
