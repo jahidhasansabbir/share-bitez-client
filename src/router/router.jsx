@@ -9,6 +9,7 @@ import Login from "../pages/Login";
 import FoodDetails from "../pages/Food-Details/FoodDetails";
 import ManageMyFoods from "../pages/Manage-My-Foods/ManageMyFoods";
 import Update from "../pages/Manage-My-Foods/Update";
+import MyFoodRequest from "../pages/My-Food-Request/MyFoodRequest";
 
 export const router =createBrowserRouter([
     {
@@ -51,6 +52,11 @@ export const router =createBrowserRouter([
                 path: 'Update/:id',
                 loader: ({params})=>fetch(`${import.meta.env.VITE_server}/food/${params.id}`),
                 Component: Update
+            },
+            {
+                path: 'my-food-request',
+                loader: ()=>fetch(`${import.meta.env.VITE_server}/requested-food`),
+                Component:MyFoodRequest
             }
 
         ]

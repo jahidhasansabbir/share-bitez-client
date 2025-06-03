@@ -25,10 +25,10 @@ const FoodDetails = () => {
       title: `<strong>Request Food</strong>`,
       html: `
      <div style="text-align: left; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333;">
-    <p style="font-weight: 600; font-size: 1.1rem; margin-bottom: 0.25rem;">Food Name: <span style="font-weight: 400;">${foodName}</span></p>
-    <div style="text-align:center; margin-bottom: 1rem;">
-      <img src="${img}" alt="Food Image" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);" />
-    </div>
+     <div style="text-align:center; margin-bottom: 1rem;">
+       <img src="${img}" alt="Food Image" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);" />
+     </div>
+    <p style="font-weight: 600; font-size: 1.1rem; margin-bottom: 0.25rem;"><b>Food Name:</b> <span style="font-weight: 400;">${foodName}</span></p>
     <p style="margin: 0.25rem 0;"><b>Food ID:</b> <span style="font-weight: 400;">${_id}</span></p>
     <p style="margin: 0.25rem 0;"><b>Donor Email:</b> <span style="font-weight: 400;">${donor.email}</span></p>
     <p style="margin: 0.25rem 0;"><b>Donor Name:</b> <span style="font-weight: 400;">${donor.name}</span></p>
@@ -56,7 +56,8 @@ const FoodDetails = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         const foodStatus = "requested"
-        axios.patch(`${import.meta.env.VITE_server}/food/${_id}`, {foodStatus})
+        const requestedDate = bangladeshTime;
+        axios.patch(`${import.meta.env.VITE_server}/food/${_id}`, {foodStatus, requestedDate})
         .then(res=>console.log(res.data))
         // You can send this to your server using fetch/axios
       }
