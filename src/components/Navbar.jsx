@@ -29,13 +29,13 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="navbar bg-base-100 w-11/12 mx-auto">
+    <div className="navbar bg-base-100 w-11/12 mx-auto p-0">
       <div className="navbar-start">
         <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+          <div tabIndex={0} role="button" className="cursor-pointer hover:bg-[#8080800c] lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
+              className="h-8 w-8"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -56,7 +56,7 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">daisyUI</a>
+        <NavLink to='/' className="font-bold text-xl">Share<span className="text-blue-700">Bite</span></NavLink>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>
@@ -64,22 +64,22 @@ const Navbar = () => {
       <div className="navbar-end">
         {user ? (
           <>
-            <img src={user.photoURL} className="w-10 mr-2" />
+            <img src={user.photoURL} className="w-10 mr-2 rounded-full" />
             <button
               onClick={() => {
                 logOut();
               }}
-              className="btn border-none"
+              className="btn border-none bg-blue-700 text-white btn-sm"
             >
               Log Out
             </button>
           </>
         ) : (
           <>
-            <NavLink to="/register" className="btn border-none">
+            <NavLink to="/register" className="btn border-none mr-4 bg-blue-700 text-white btn-sm">
               Sign Up
             </NavLink>
-            <NavLink to="/log-in" className="btn border-none">
+            <NavLink to="/log-in" className="btn border-none bg-blue-700 text-white btn-sm">
               Log In
             </NavLink>
           </>

@@ -1,9 +1,14 @@
 import React, { use } from "react";
-import { NavLink, useLoaderData } from "react-router";
-import Swal from "sweetalert2";
 import { AuthContext } from "../../context/AuthContext";
+import Swal from "sweetalert2";
 import axios from "axios";
-const FoodDetails = () => {
+// import { NavLink } from "react-router";
+// import Swal from "sweetalert2";
+// import { AuthContext } from "../../context/AuthContext";
+// import axios from "axios";
+const FoodDetails = ({data}) => {
+  // const data = use(fPromise);
+  // console.log(data);
   const { user } = use(AuthContext);
 
   const {
@@ -15,9 +20,10 @@ const FoodDetails = () => {
     additionalNotes,
     donor,
     _id,
-  } = useLoaderData();
+  } = data
   const img =
     "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp";
+    
   const handleRequest = () => {
     const bangladeshTime =  new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Dhaka' });
 
@@ -47,11 +53,6 @@ const FoodDetails = () => {
       preConfirm: () => {
         const notes = Swal.getPopup().querySelector("#notes").value;
         console.log(notes);
-        //   if (!notes.trim()) {
-        //     Swal.showValidationMessage('Please write a note before submitting.');
-        //     return false;
-        //   }
-        //   return { ...food, notes, requestDate, userEmail: loggedInUserEmail };
       },
     }).then((result) => {
       if (result.isConfirmed) {
@@ -59,7 +60,6 @@ const FoodDetails = () => {
         const requestedDate = bangladeshTime;
         axios.patch(`${import.meta.env.VITE_server}/food/${_id}`, {foodStatus, requestedDate})
         .then(res=>console.log(res.data))
-        // You can send this to your server using fetch/axios
       }
     });
   };

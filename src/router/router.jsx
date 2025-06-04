@@ -6,11 +6,11 @@ import AvailableFood from "../pages/Available-Food/AvailableFood";
 import AddFood from "../pages/Add-A-Food/AddFood";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
-import FoodDetails from "../pages/Food-Details/FoodDetails";
 import ManageMyFoods from "../pages/Manage-My-Foods/ManageMyFoods";
 import Update from "../pages/Manage-My-Foods/Update";
 import MyFoodRequest from "../pages/My-Food-Request/MyFoodRequest";
 import PrivateRoute from "../provider/PrivateRoute";
+import FoodDetailsContainer from "../pages/Food-Details/FoodDetailsContainer";
 
 export const router =createBrowserRouter([
     {
@@ -42,7 +42,7 @@ export const router =createBrowserRouter([
             {
                 path: 'food/:id',
                 loader: ({params})=>fetch(`${import.meta.env.VITE_server}/food/${params.id}`),
-                element: <PrivateRoute><FoodDetails></FoodDetails></PrivateRoute>
+                Component: FoodDetailsContainer
             },
             {
                 path: 'manage-my-food',

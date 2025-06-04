@@ -4,7 +4,8 @@ import { use } from 'react';
 import { AuthContext } from '../context/AuthContext';
 
 const axiosInstance = axios.create({
-    baseURL: `${import.meta.env.VITE_server}`
+    // baseURL: `${import.meta.env.VITE_server}`
+    baseURL: 'http://localhost:4000'
 })
 const useAxiosSecure = () => {
     const {user} = use(AuthContext);
