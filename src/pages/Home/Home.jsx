@@ -1,6 +1,7 @@
 import Navbar from '../../components/Navbar';
 import Slider from './Slider';
 import FeaturedFood from './FeaturedFood';
+import HowItWorks from './HowItWorks';
 const foodPromise = fetch(`${import.meta.env.VITE_server}/foods`).then(res=>res.json())
 const Home = () => {
     return (
@@ -11,6 +12,12 @@ const Home = () => {
             </div>
             <div className='my-6'>
                 <FeaturedFood foodPromise={foodPromise}></FeaturedFood>
+            </div>
+            <div>
+                <HowItWorks></HowItWorks>
+            </div>
+            <div>
+                
             </div>
         </div>
     );
