@@ -6,11 +6,11 @@ import AvailableFood from "../pages/Available-Food/AvailableFood";
 import AddFood from "../pages/Add-A-Food/AddFood";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
-import ManageMyFoods from "../pages/Manage-My-Foods/ManageMyFoods";
 import Update from "../pages/Manage-My-Foods/Update";
 import PrivateRoute from "../provider/PrivateRoute";
 import FoodDetailsContainer from "../pages/Food-Details/FoodDetailsContainer";
 import MyFoodRequestContainer from "../pages/My-Food-Request/MyFoodRequestContainer";
+import ManageMYFoodsContainer from "../pages/Manage-My-Foods/ManageMYFoodsContainer";
 
 export const router = createBrowserRouter([
   {
@@ -51,14 +51,12 @@ export const router = createBrowserRouter([
             <FoodDetailsContainer></FoodDetailsContainer>
           </PrivateRoute>
         ),
-        // Component: FoodDetailsContainer
       },
       {
-        path: "manage-my-food/",
-        loader: () => fetch(`${import.meta.env.VITE_server}/available-foods`),
+        path: "/manage-my-food/:email",
         element: (
           <PrivateRoute>
-            <ManageMyFoods></ManageMyFoods>
+            <ManageMYFoodsContainer></ManageMYFoodsContainer>
           </PrivateRoute>
         ),
       },

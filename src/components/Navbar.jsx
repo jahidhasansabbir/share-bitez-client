@@ -13,16 +13,13 @@ const Navbar = () => {
         <NavLink to="/add-a-food">Add a Food</NavLink>
       </li>
       <li>
-        <NavLink to={`/demo`}>Demo</NavLink>
-      </li>
-      <li>
         <NavLink to="/available-foods">Available Foods</NavLink>
       </li>
       {user && (
         <>
           {" "}
           <li>
-            <NavLink to="/manage-my-food">Manage My Food</NavLink>
+            <NavLink to={`/manage-my-food/${user.email}`}>Manage My Food</NavLink>
           </li>
           <li>
             <NavLink to={`/my-food-request/${user.email}`}>My Food Request</NavLink>

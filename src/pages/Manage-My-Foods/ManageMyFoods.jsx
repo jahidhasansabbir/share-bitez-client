@@ -1,15 +1,13 @@
 import React from 'react';
 import { use } from 'react';
-import { useLoaderData } from 'react-router';
-import { AuthContext } from '../../context/AuthContext';
 import FoodRow from './FoodRow';
 import { useState } from 'react';
 
-const ManageMyFoods = () => {
-    const foods = useLoaderData()
-    const {user} = use(AuthContext);
-    const filterFoods = foods.filter(food=>food.donor.email==user.email)
+const ManageMyFoods = ({manageFoodPromise}) => {
+  
+  const filterFoods = use(manageFoodPromise)
     const [myFoods, setMyFoods] = useState(filterFoods);
+    console.log(myFoods);
     return (
         <div className="overflow-x-auto w-11/12 mx-auto">
   <table className="table">
