@@ -3,7 +3,7 @@ import { NavLink } from "react-router";
 import { AuthContext } from "../context/AuthContext";
 
 const Navbar = () => {
-  const { user } = use(AuthContext);
+  const { user, logOut } = use(AuthContext);
   const links = (
     <>
       <li>
@@ -13,12 +13,19 @@ const Navbar = () => {
         <NavLink to="/add-a-food">Add a Food</NavLink>
       </li>
       <li>
-        <NavLink to="/register">Sign up</NavLink>
+        <NavLink to="/available-foods">Available Foods</NavLink>
       </li>
-        <li><NavLink to="/login">Sign in</NavLink></li>
-        <li><NavLink to="/manage-my-food">Manage My Food</NavLink></li>
-        <li><NavLink to="/my-food-request">My Food Request</NavLink></li>
-        <li><NavLink to="/available-foods">Available Foods</NavLink></li>
+      {user && (
+        <>
+          {" "}
+          <li>
+            <NavLink to="/manage-my-food">Manage My Food</NavLink>
+          </li>
+          <li>
+            <NavLink to="/my-food-request">My Food Request</NavLink>
+          </li>
+        </>
+      )}
     </>
   );
   return (
@@ -58,14 +65,21 @@ const Navbar = () => {
         {user ? (
           <>
             <img src={user.photoURL} className="w-10 mr-2" />
-            <NavLink className="btn">Log Out</NavLink>
+            <button
+              onClick={() => {
+                logOut();
+              }}
+              className="btn border-none"
+            >
+              Log Out
+            </button>
           </>
         ) : (
           <>
-            <NavLink to="/register" className="btn">
+            <NavLink to="/register" className="btn border-none">
               Sign Up
             </NavLink>
-            <NavLink to="/log-in" className="btn">
+            <NavLink to="/log-in" className="btn border-none">
               Log In
             </NavLink>
           </>

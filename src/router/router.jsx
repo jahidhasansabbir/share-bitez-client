@@ -10,6 +10,7 @@ import FoodDetails from "../pages/Food-Details/FoodDetails";
 import ManageMyFoods from "../pages/Manage-My-Foods/ManageMyFoods";
 import Update from "../pages/Manage-My-Foods/Update";
 import MyFoodRequest from "../pages/My-Food-Request/MyFoodRequest";
+import PrivateRoute from "../provider/PrivateRoute";
 
 export const router =createBrowserRouter([
     {
@@ -23,11 +24,11 @@ export const router =createBrowserRouter([
             {
                 path: 'available-foods',
                 loader: ()=>axios(`${import.meta.env.VITE_server}/available-foods`),
-                Component: AvailableFood
+                element: <AvailableFood></AvailableFood>
             },
             {
                 path:'add-a-food',
-                Component: AddFood
+                element: <PrivateRoute><AddFood></AddFood></PrivateRoute>
             },
             {
                 path: 'register',
@@ -41,12 +42,12 @@ export const router =createBrowserRouter([
             {
                 path: 'food/:id',
                 loader: ({params})=>fetch(`${import.meta.env.VITE_server}/food/${params.id}`),
-                Component: FoodDetails
+                element: <PrivateRoute><FoodDetails></FoodDetails></PrivateRoute>
             },
             {
                 path: 'manage-my-food',
                 loader: ()=>fetch(`${import.meta.env.VITE_server}/available-foods`),
-                Component: ManageMyFoods
+                element: <PrivateRoute><ManageMyFoods></ManageMyFoods></PrivateRoute>
             },
             {
                 path: 'Update/:id',
@@ -56,7 +57,7 @@ export const router =createBrowserRouter([
             {
                 path: 'my-food-request',
                 loader: ()=>fetch(`${import.meta.env.VITE_server}/requested-food`),
-                Component:MyFoodRequest
+                element: <PrivateRoute><MyFoodRequest></MyFoodRequest></PrivateRoute>
             }
 
         ]
