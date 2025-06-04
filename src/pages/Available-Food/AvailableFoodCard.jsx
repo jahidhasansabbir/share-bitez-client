@@ -9,6 +9,7 @@ const AvailableFoodCard = ({ food }) => {
     expireDate,
     pickupLocation,
     _id,
+    foodImage
   } = food;
 
  
@@ -16,7 +17,7 @@ const AvailableFoodCard = ({ food }) => {
     <div className="card bg-white shadow-xl rounded-2xl ">
       <figure className="relative">
         <img
-          src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+          src={foodImage}
           alt="Food"
           className="w-full h-64 object-cover"
         />

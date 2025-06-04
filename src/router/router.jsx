@@ -11,6 +11,7 @@ import PrivateRoute from "../provider/PrivateRoute";
 import FoodDetailsContainer from "../pages/Food-Details/FoodDetailsContainer";
 import MyFoodRequestContainer from "../pages/My-Food-Request/MyFoodRequestContainer";
 import ManageMYFoodsContainer from "../pages/Manage-My-Foods/ManageMYFoodsContainer";
+import Error from "../pages/Error";
 
 export const router = createBrowserRouter([
   {
@@ -61,7 +62,7 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: "Update/:id",
+        path: "update/:id",
         loader: ({ params }) =>
           fetch(`${import.meta.env.VITE_server}/food/${params.id}`),
         Component: Update,
@@ -76,4 +77,8 @@ export const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path: "*",
+    Component: Error
+  }
 ]);

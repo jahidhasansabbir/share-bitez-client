@@ -1,12 +1,14 @@
 import axios from "axios";
 import React, { use } from "react";
 import { AuthContext } from "../../context/AuthContext";
+import { useNavigate } from "react-router";
+import Swal from "sweetalert2";
 
 const AddFood = () => {
   const {user} = use(AuthContext);
   const {displayName, photoURL, email} = user;
   const donor = { name: displayName , email: email, image: photoURL };
-
+  const navigate = useNavigate();
   const handleAddFood = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -32,6 +34,13 @@ const AddFood = () => {
         if(res.data.insertedId){
             food._id=res.data.insertedId;
             form.reset();
+             Swal.fire({
+                      icon: "success",
+                      title: "Food Added Successful!",
+                      showConfirmButton: false,
+                      timer: 1500,
+                    });
+            navigate('/')
         }
       });
   };

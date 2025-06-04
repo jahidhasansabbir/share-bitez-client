@@ -17,10 +17,10 @@ const FoodDetails = ({data}) => {
     pickupLocation,
     additionalNotes,
     donor,
+    foodImage,
     _id,
   } = data
-  const img =
-    "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp";
+  const img = foodImage
     
   const handleRequest = () => {
     const bangladeshTime =  new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Dhaka' });
@@ -30,7 +30,7 @@ const FoodDetails = ({data}) => {
       html: `
      <div style="text-align: left; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333;">
      <div style="text-align:center; margin-bottom: 1rem;">
-       <img src="${img}" alt="Food Image" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);" />
+       <img src="${img}" alt="Food Image" style="width: 100%; height: 230px; object-fit: cover;  border-radius: 8px;  box-shadow: 0 2px 8px rgba(0,0,0,0.15);" />
      </div>
     <p style="font-weight: 600; font-size: 1.1rem; margin-bottom: 0.25rem;"><b>Food Name:</b> <span style="font-weight: 400;">${foodName}</span></p>
     <p style="margin: 0.25rem 0;"><b>Food ID:</b> <span style="font-weight: 400;">${_id}</span></p>
@@ -67,9 +67,9 @@ const FoodDetails = ({data}) => {
     <div className="card bg-white shadow-xl rounded-2xl w-11/12 mx-auto my-10">
       <figure className="relative">
         <img
-          src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+          src={foodImage}
           alt="Food"
-          className="w-full h-64 object-cover"
+          className="w-full h-72 object-cover"
         />
         <div className="absolute top-2 left-2 bg-gradient-to-r from-purple-500 to-indigo-500 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-md">
           {foodStatus}
@@ -95,6 +95,7 @@ const FoodDetails = ({data}) => {
           {additionalNotes}
         </p>
         <div className="divider my-1"></div>
+        <img src={donor.image} alt="" />
         <p className="text-lg">
           <span className="font-semibold text-gray-700">Donor Name:</span>{" "}
           {donor.name}

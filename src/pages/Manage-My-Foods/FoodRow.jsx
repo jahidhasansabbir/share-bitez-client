@@ -4,7 +4,7 @@ import { NavLink } from "react-router";
 import Swal from "sweetalert2";
 
 const FoodRow = ({ food, setMyFoods, myFoods}) => {
-  const { foodName, foodQuantity, expireDate, pickupLocation, _id } = food;
+  const { foodName,foodImage, foodQuantity, expireDate, pickupLocation, _id } = food;
   const handleDeleteFood = () => {
       Swal.fire({
         title: "Are you sure?",
@@ -35,7 +35,7 @@ const FoodRow = ({ food, setMyFoods, myFoods}) => {
           <div className="avatar">
             <div className="mask mask-squircle h-12 w-12">
               <img
-                src="https://img.daisyui.com/images/profile/demo/3@94.webp"
+                src={foodImage}
                 alt="Avatar Tailwind CSS Component"
               />
             </div>
