@@ -63,12 +63,12 @@ const Register = () => {
         <h1 className="text-2xl font-bold md:text-4xl">Register now!</h1>
         <form onSubmit={handleSignUpWithEmail} className="fieldset">
           <label className="label">Name</label>
-          <input type="text" name="name" className="input" placeholder="Name" />
+          <input type="text" name="name" className="input border-1" placeholder="Name" />
           <label className="label">Email</label>
           <input
             type="email"
             name="email"
-            className="input"
+            className="input border-1"
             placeholder="Email"
           />
 
@@ -76,14 +76,14 @@ const Register = () => {
           <input
             type="password"
             name="password"
-            className="input"
+            className="input border-1"
             placeholder="Password"
           />
           <label className="label">Photo</label>
           <input
             type="text"
             name="photoUrl"
-            className="input"
+            className="input border-1"
             placeholder="PhotoURL"
           />
           <div>
@@ -95,7 +95,7 @@ const Register = () => {
         <p className="text-center text-gray-400">or,</p>
         <button
           onClick={handleGoogleSignIn}
-          className="btn bg-white text-black border-[#e5e5e5]"
+          className="btn bg-base-300 text-black "
         >
           <svg
             aria-label="Google logo"

@@ -48,14 +48,14 @@ const Login = () => {
           <input
             type="email"
             name="email"
-            className="input"
+            className="input border-1"
             placeholder="Email"
           />
           <label className="label">Password</label>
           <input
             type="password"
             name="password"
-            className="input"
+            className="input border-1"
             placeholder="Password"
           />
           <div>
@@ -66,7 +66,7 @@ const Login = () => {
         <p className="text-center text-gray-400">or,</p>
         <button
           onClick={handleGoogleSignIn}
-          className="btn bg-white text-black border-[#e5e5e5]"
+          className="btn bg-base-300 text-black border-2"
         >
           <svg
             aria-label="Google logo"

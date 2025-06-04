@@ -1,19 +1,21 @@
-import axios from 'axios';
-import React from 'react';
-import { use } from 'react';
+import { useContext } from 'react';
 import { AuthContext } from '../context/AuthContext';
+import axios from 'axios';
 
-const axiosInstance = axios.create({
-    // baseURL: `${import.meta.env.VITE_server}`
-    baseURL: 'http://localhost:4000'
-})
-const useAxiosSecure = () => {
-    const {user} = use(AuthContext);
-    axiosInstance.interceptors.request.use(config=>{
-        config.headers.authorization = `Bearer ${user.accessToken}`
-        return config;
-    })
-    return axiosInstance
+ const useAxiosSecure = () => {
+  const { user } = useContext(AuthContext);
+
+  const axiosInstance = axios.create({
+    baseURL: import.meta.env.VITE_server
+  });
+
+  axiosInstance.interceptors.request.use(config => {
+  if (user?.accessToken) {
+    config.headers.authorization = `Bearer ${user.accessToken}`;
+  }
+  return config;
+});
+
+  return axiosInstance;
 };
-
 export default useAxiosSecure;

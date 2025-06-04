@@ -4,6 +4,7 @@ import { AuthContext } from "../../context/AuthContext";
 import { useState } from "react";
 import { motion } from "motion/react";
 const AvailableFood = () => {
+  console.log(motion);
   const data = useLoaderData();
   const [toggle, setToggle] = useState(false);
   const availableFoods = data.data;

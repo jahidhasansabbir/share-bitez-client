@@ -14,7 +14,6 @@ const Home = () => {
       return res.json();
     },
   });
-  console.log(motion);
   if (isPending) {
     return <Loading></Loading>;
   }

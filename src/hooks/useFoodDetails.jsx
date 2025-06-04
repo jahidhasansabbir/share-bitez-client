@@ -1,12 +1,12 @@
 import React from 'react';
 import useAxiosSecure from './useAxiosSecure';
 
-const useFoodDetails = () => {
+const useFoodDetailsApi = () => {
     const axiosSecure = useAxiosSecure();
-    const foodDetails = (id)=>{
-        return axiosSecure.get(`/food/${id}`)
+    const foodDetailsPromise = (id)=>{
+        return axiosSecure.get(`/requested-food/${id}`)
         .then(res=>res.data)
     }
-    return {foodDetails}
+    return {foodDetailsPromise}
 }
-export default useFoodDetails;
+export default useFoodDetailsApi;
