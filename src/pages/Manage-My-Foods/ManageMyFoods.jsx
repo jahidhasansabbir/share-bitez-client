@@ -26,7 +26,7 @@ const ManageMyFoods = ({ manageFoodPromise }) => {
           </tr>
         </thead>
         <tbody>
-          {myFoods.map((food) => (
+          {myFoods?.map((food) => (
             <FoodRow
               myFoods={myFoods}
               setMyFoods={setMyFoods}

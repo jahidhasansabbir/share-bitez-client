@@ -9,7 +9,7 @@ const {user}= use(AuthContext);
     return (
         <div>
             <Suspense fallback={<Loading></Loading>}>
-            <ManageMyFoods manageFoodPromise = {manageFoodPromise(user.email)}></ManageMyFoods>
+            <ManageMyFoods manageFoodPromise = {manageFoodPromise(user?.email)}></ManageMyFoods>
       </Suspense>
         </div>
     );
