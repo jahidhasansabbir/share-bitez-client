@@ -7,8 +7,6 @@ import axios from "axios";
 // import { AuthContext } from "../../context/AuthContext";
 // import axios from "axios";
 const FoodDetails = ({data}) => {
-  // const data = use(fPromise);
-  // console.log(data);
   const { user } = use(AuthContext);
 
   const {
@@ -38,7 +36,7 @@ const FoodDetails = ({data}) => {
     <p style="margin: 0.25rem 0;"><b>Food ID:</b> <span style="font-weight: 400;">${_id}</span></p>
     <p style="margin: 0.25rem 0;"><b>Donor Email:</b> <span style="font-weight: 400;">${donor.email}</span></p>
     <p style="margin: 0.25rem 0;"><b>Donor Name:</b> <span style="font-weight: 400;">${donor.name}</span></p>
-    <p style="margin: 0.25rem 0;"><b>User Email:</b> <span style="font-weight: 400;">${user.email}</span></p>
+    <p style="margin: 0.25rem 0;"><b>User Email:</b> <span style="font-weight: 400;">${user?.email}</span></p>
     <p style="margin: 0.25rem 0;"><b>User Name:</b> <span style="font-weight: 400;">${user.displayName}</span></p>
     <p style="margin: 0.25rem 0;"><b>Request Date:</b> <span style="font-weight: 400;">${bangladeshTime}</span></p>
     <p style="margin: 0.25rem 0;"><b>Pickup Location:</b> <span style="font-weight: 400;">${pickupLocation}</span></p>
@@ -58,7 +56,8 @@ const FoodDetails = ({data}) => {
       if (result.isConfirmed) {
         const foodStatus = "requested"
         const requestedDate = bangladeshTime;
-        axios.patch(`${import.meta.env.VITE_server}/food/${_id}`, {foodStatus, requestedDate})
+        const requestedEmail= user.email;
+        axios.patch(`${import.meta.env.VITE_server}/food/${_id}`, {foodStatus, requestedDate, requestedEmail})
         .then(res=>console.log(res.data))
       }
     });

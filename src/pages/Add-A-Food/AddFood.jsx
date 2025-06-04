@@ -36,7 +36,8 @@ const AddFood = () => {
       });
   };
   return (
-    <div className="w-11/12 mx-auto my-8">
+    <div className="w-11/12 max-w-[720px] mx-auto my-8">
+      <h1 className="text-2xl font-bold text-center">Add Food</h1>
       <form className="fieldset" onSubmit={handleAddFood}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="flex flex-col">
@@ -45,7 +46,7 @@ const AddFood = () => {
               required
               type="text"
               name="foodName"
-              className="input w-full"
+              className="input w-full border-1"
               placeholder="e.g: Cup-cake"
             />
           </div>
@@ -56,7 +57,7 @@ const AddFood = () => {
               required
               type="text"
               name="foodImage"
-              className="input w-full"
+              className="input w-full border-1"
               placeholder="Please enter photoURL"
             />
           </div>
@@ -67,7 +68,7 @@ const AddFood = () => {
               required
               type="text"
               name="foodQuantity"
-              className="input w-full"
+              className="input w-full border-1"
               placeholder="Enter food quantity"
             />
           </div>
@@ -78,26 +79,26 @@ const AddFood = () => {
               type="text"
               required
               name="pickupLocation"
-              className="input w-full"
+              className="input w-full border-1"
               placeholder="Enter pickup location"
             />
           </div>
 
+        </div>
           <div className="flex flex-col">
             <label className="label">Expired Date</label>
             <input
               type="date"
               required
               name="expireDate"
-              className="input w-full"
+              className="input w-full border-1"
               placeholder="Select date and time"
             />
           </div>
-        </div>
         <div className="flex flex-col w-full">
           <label className="label">Additional Notes</label>
           <textarea
-            className="textarea h-24 w-full"
+            className="textarea h-24 w-full border-1"
             name="additionalNotes"
             required
             placeholder="Describe..."

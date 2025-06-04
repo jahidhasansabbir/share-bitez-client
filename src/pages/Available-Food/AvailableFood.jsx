@@ -13,7 +13,7 @@ const AvailableFood = () => {
 
   return (
     <div className="w-11/12 mx-auto">
-      <h1>AvailableFood</h1>
+      <h1 className="text-2xl font-bold text-center">Available Food</h1>
       {/* search-bar */}
       <div className="flex justify-center items-center gap-1">
         <label className="input bg-[#80808018] w-full my-4">

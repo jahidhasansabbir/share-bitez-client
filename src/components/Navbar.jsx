@@ -13,6 +13,9 @@ const Navbar = () => {
         <NavLink to="/add-a-food">Add a Food</NavLink>
       </li>
       <li>
+        <NavLink to="/demo">Demo</NavLink>
+      </li>
+      <li>
         <NavLink to="/available-foods">Available Foods</NavLink>
       </li>
       {user && (
@@ -22,7 +25,7 @@ const Navbar = () => {
             <NavLink to="/manage-my-food">Manage My Food</NavLink>
           </li>
           <li>
-            <NavLink to="/my-food-request">My Food Request</NavLink>
+            <NavLink to={`/my-food-request/${user.email}`}>My Food Request</NavLink>
           </li>
         </>
       )}
@@ -79,7 +82,7 @@ const Navbar = () => {
             <NavLink to="/register" className="btn border-none mr-4 bg-blue-700 text-white btn-sm">
               Sign Up
             </NavLink>
-            <NavLink to="/log-in" className="btn border-none bg-blue-700 text-white btn-sm">
+            <NavLink to="/login" className="btn border-none bg-blue-700 text-white btn-sm">
               Log In
             </NavLink>
           </>

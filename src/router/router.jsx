@@ -42,10 +42,11 @@ export const router =createBrowserRouter([
             {
                 path: 'food/:id',
                 loader: ({params})=>fetch(`${import.meta.env.VITE_server}/food/${params.id}`),
-                Component: FoodDetailsContainer
+                element: <PrivateRoute><FoodDetailsContainer></FoodDetailsContainer></PrivateRoute>
+                // Component: FoodDetailsContainer
             },
             {
-                path: 'manage-my-food',
+                path: 'manage-my-food/',
                 loader: ()=>fetch(`${import.meta.env.VITE_server}/available-foods`),
                 element: <PrivateRoute><ManageMyFoods></ManageMyFoods></PrivateRoute>
             },
@@ -55,10 +56,14 @@ export const router =createBrowserRouter([
                 Component: Update
             },
             {
-                path: 'my-food-request',
-                loader: ()=>fetch(`${import.meta.env.VITE_server}/requested-food`),
+                path: 'my-food-request/:email',
+                loader: ({params})=>fetch(`${import.meta.env.VITE_server}/requested-food/${params.email}`),
                 element: <PrivateRoute><MyFoodRequest></MyFoodRequest></PrivateRoute>
-            }
+            }, 
+            // {
+            //     path: 'demo',
+            //     Component: Demo
+            // }
 
         ]
     }

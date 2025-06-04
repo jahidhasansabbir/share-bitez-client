@@ -5,6 +5,7 @@ import { auth } from '../firebase/firebase.init';
 
 const provider = new GoogleAuthProvider();
 const AuthProvider = ({children}) => {
+    const [isLoading, setIsLoading]= useState(true)
     const [user, setUser] = useState(null)
     const register = (email, password)=>{
         return createUserWithEmailAndPassword(auth, email, password)
@@ -24,6 +25,7 @@ const AuthProvider = ({children}) => {
     useEffect(()=>{
         const unsubscribe = onAuthStateChanged(auth, currentUser=>{
             setUser(currentUser)
+            setIsLoading(false)
         })
         return ()=>unsubscribe()
     },[])
@@ -33,7 +35,8 @@ const AuthProvider = ({children}) => {
         user,
         logOut,
         userGoogleSignIn,
-        logInUser
+        logInUser,
+        isLoading
     }
     return (
         <AuthContext.Provider value={userInfo}>

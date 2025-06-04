@@ -10,7 +10,7 @@ const FoodDetailsContainer = () => {
     // const fPromise = fetch(`${import.meta.env.VITE_server}/food/${id}`)
 
     return (
-        <div>
+        <div className='max-w-[760px] mx-auto'>
             <FoodDetails data={data}></FoodDetails>
         </div>
     );
