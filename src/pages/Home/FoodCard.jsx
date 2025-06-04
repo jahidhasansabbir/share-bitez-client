@@ -2,13 +2,14 @@ import React from "react";
 import { NavLink } from "react-router";
 
 const FoodCard = ({ food }) => {
-  const { foodName, foodQuantity, foodStatus , _id} = food;
+  const { foodName, foodQuantity, foodStatus , _id, foodImage} = food;
 //   console.log(foodImage);
   return (
     <div className="card bg-base-100 shadow-sm">
       <figure>
         <img
-          src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+          src={foodImage}
+          className="h-[350px] object-cover"
           alt="Shoes"
         />
       </figure>
