@@ -7,6 +7,10 @@
 **Share Bitez** is a community-driven food sharing platform built to reduce food waste by connecting donors with surplus food to individuals in need. It allows users to post available food, request it, and manage their shared or requested items. This full-stack project uses **React**, **Firebase**, **Node.js**, **MongoDB**, and implements features like JWT authentication, protected routes, and responsive UI/UX.
 
 ---
+## Important Note
+
+> **Issue:** The site **does not work properly in incognito mode** due to JWT authentication token storage limitations in some browsers' private sessions. This is a known JWT-related issue affecting private browsing modes.
+
 
 ## 🧩 Features Implemented
 
