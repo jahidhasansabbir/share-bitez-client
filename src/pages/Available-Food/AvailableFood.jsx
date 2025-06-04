@@ -2,7 +2,7 @@ import { useLoaderData } from "react-router";
 import AvailableFoodCard from "./AvailableFoodCard";
 import { AuthContext } from "../../context/AuthContext";
 import { useState } from "react";
-
+import { motion } from "motion/react";
 const AvailableFood = () => {
   const data = useLoaderData();
   const [toggle, setToggle] = useState(false);
@@ -46,7 +46,10 @@ const AvailableFood = () => {
       </div>
 
 
-      <div
+      <motion.div initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true }}
         className={`grid grid-cols-1 md:grid-cols-2 ${
           toggle ? "lg:grid-cols-2" : "lg:grid-cols-3"
         } gap-6`}
@@ -54,7 +57,7 @@ const AvailableFood = () => {
         {searchFoods.map((food) => (
           <AvailableFoodCard key={food._id} food={food}></AvailableFoodCard>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 };
