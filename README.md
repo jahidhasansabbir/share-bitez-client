@@ -91,5 +91,99 @@
 
 ---
 
+## 🧰 Installation & Setup Guide
+
+### 1. Clone the Repository
+
+```bash
+git https://github.com/jahidhasansabbir/share-bitez-client.git
+cd share-bitez-client
+```
+
+### 2. Install Dependencies
+
+Make sure you have Node.js installed, then run:
+
+```bash
+npm install
+```
+
+### 3. Create `.env.local` File
+
+At the root of your project, create a `.env.local` file and add the following Firebase environment variables:
+
+```env
+VITE_apiKey=your_api_key
+VITE_authDomain=your_auth_domain
+VITE_projectId=your_project_id
+VITE_storageBucket=your_storage_bucket
+VITE_messagingSenderId=your_messaging_sender_id
+VITE_appId=your_app_id
+```
+
+> ⚠️ **Important:** Do not commit `.env.local` to version control. Make sure it is listed in your `.gitignore` file.
+
+### 4. Run the Application Locally
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+Then open your browser and visit:
+
+[http://localhost:5173](http://localhost:5173)  
+(or the port provided in your terminal)
+
+---
+
+## 🧰 Backend Setup Guide
+
+🔗 **Backend Server:** [share-bitez-server](https://github.com/jahidhasansabbir/share-bitez-server)
+
+### 1. Clone the Repository
+
+```bash
+git https://github.com/jahidhasansabbir/share-bitez-server.git
+cd share-bitez-server
+```
+
+### 2. Install Dependencies
+
+Make sure you have Node.js installed, then run:
+
+```bash
+npm install
+```
+
+### 3. Create `.env` File
+
+At the root of your backend project, create a .env file and add the following:
+
+```env
+URI = your_mongodb_connection_string
+SECRET_KEY = your_secret_key
+```
+
+> ⚠️ **Important:** Never expose real credentials in your code or public repositories. Ensure .env is listed in .gitignore so it is not tracked by Git.
+
+### 4. Start the Server
+
+Run the backend server:
+
+```bash
+nodemon index.js
+```
+Your backend should now be running, typically at:
+
+[http://localhost:4000](http://localhost:4000)
+> **Important:** Make sure nodemon is install globally in your machine.
+
+---
+
+
+Thank you for visiting! 🎉
+
 
 
