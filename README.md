@@ -91,6 +91,30 @@
 
 ---
 
+## 📦 Dependencies
+
+This project uses the following core libraries and tools:
+
+| Package                      | Version     | Description                                                                 |
+|-----------------------------|-------------|-----------------------------------------------------------------------------|
+| `@tailwindcss/vite`         | ^4.1.8      | Tailwind CSS integration for Vite projects                                 |
+| `@tanstack/react-query`     | ^5.80.2     | Powerful data fetching & caching for React apps                            |
+| `axios`                     | ^1.9.0      | Promise-based HTTP client for API requests                                 |
+| `clsx`                      | ^2.1.1      | Utility for constructing conditional `className` strings                    |
+| `daisyui`                   | ^5.0.43     | Tailwind CSS plugin for pre-styled UI components                           |
+| `firebase`                  | ^11.8.1     | Firebase SDK for authentication and other services                         |
+| `motion`                    | ^12.16.0    | Animation library (likely Framer Motion or similar)                        |
+| `react`                     | ^19.1.0     | Core React library for building UIs                                        |
+| `react-dom`                 | ^19.1.0     | React DOM renderer                                                          |
+| `react-router`              | ^7.6.1      | Declarative routing for React apps                                         |
+| `sweetalert2`               | ^11.22.0    | Beautiful, responsive, customizable popup alerts                           |
+| `swiper`                    | ^11.2.8     | Modern touch slider component                                               |
+| `tailwindcss`               | ^4.1.8      | Utility-first CSS framework for styling                                    |
+
+---
+
+---
+
 ## 🧰 Installation & Setup Guide
 
 ### 1. Clone the Repository
