@@ -15,6 +15,12 @@ const Navbar = () => {
       <li>
         <NavLink to="/available-foods">Available Foods</NavLink>
       </li>
+      <li>
+        <NavLink to="/support">Support</NavLink>
+      </li>
+      <li>
+        <NavLink to="/about-us">About Us</NavLink>
+      </li>
       {user && (
         <>
           {" "}
@@ -29,7 +35,8 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="navbar bg-base-100 w-11/12 mx-auto p-0">
+    <div className="bg-white/60 backdrop-blur-sm shadow-sm sticky top-0 z-30">
+      <div className="navbar max-w-[1600px]  w-11/12 mx-auto p-0">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="cursor-pointer hover:bg-[#8080800c] lg:hidden">
@@ -76,15 +83,13 @@ const Navbar = () => {
           </>
         ) : (
           <>
-            <NavLink to="/register" className="btn border-none mr-4 bg-blue-700 text-white btn-sm">
-              Sign Up
-            </NavLink>
             <NavLink to="/login" className="btn border-none bg-blue-700 text-white btn-sm">
               Log In
             </NavLink>
           </>
         )}
       </div>
+    </div>
     </div>
   );
 };

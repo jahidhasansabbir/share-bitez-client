@@ -3,7 +3,8 @@ import { NavLink } from "react-router";
 
 const Footer = () => {
   return (
-    <footer className="footer sm:footer-horizontal bg-neutral text-neutral-content p-10">
+    <footer className=" bg-neutral">
+      <div className="footer sm:footer-horizontal text-neutral-content py-10 max-w-[1600px] w-11/12 mx-auto">
       <aside>
        
         <p>
@@ -73,6 +74,7 @@ const Footer = () => {
           </a>
         </div>
       </nav>
+    </div>
     </footer>
   );
 };

@@ -12,6 +12,8 @@ import FoodDetailsContainer from "../pages/Food-Details/FoodDetailsContainer";
 import MyFoodRequestContainer from "../pages/My-Food-Request/MyFoodRequestContainer";
 import ManageMYFoodsContainer from "../pages/Manage-My-Foods/ManageMYFoodsContainer";
 import Error from "../pages/Error";
+import Support from "../pages/Support";
+import AboutUs from "../pages/AboutUs";
 
 export const router = createBrowserRouter([
   {
@@ -75,6 +77,14 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
+      {
+        path: "support",
+        Component: Support
+      },
+      {
+        path: "about-us",
+        Component:AboutUs
+      }
     ],
   },
   {

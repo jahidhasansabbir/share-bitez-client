@@ -11,9 +11,9 @@ const Root = () => {
         return <Loading></Loading>
     }
     return (
-        <div className='max-w-[1440px] mx-auto'>
-            <Navbar></Navbar>
-           <div className='min-h-[84vh]'>
+        <div className=''>
+        <Navbar></Navbar>
+           <div className='max-w-[1600px] mx-auto w-11/12 min-h-[84vh]'>
              <Outlet/>
            </div>
             <Footer></Footer>

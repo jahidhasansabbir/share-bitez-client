@@ -2,7 +2,7 @@ import React from 'react';
 
 const HowItWorks = () => {
     return (
-        <div className="py-10 bg-gray-50 text-center">
+        <div className=" bg-gray-50 text-center">
   <h2 className="text-3xl font-bold mb-6">How It Works</h2>
   <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-6">
     <div>
@@ -25,4 +25,4 @@ const HowItWorks = () => {
     );
 };
 
-export default HowItWorks;
+export default HowItWorks; 

@@ -18,7 +18,7 @@ const Home = () => {
     return <Loading></Loading>;
   }
   return (
-    <div className="w-11/12 mx-auto">
+    <div className="">
       <motion.div initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
@@ -31,7 +31,7 @@ const Home = () => {
             </motion.div> */}
 
       <motion.div
-        className="my-6"
+        className=""
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
@@ -39,10 +39,10 @@ const Home = () => {
       >
         <FeaturedFood foods={foods} />
       </motion.div>
-      <div className="my-10">
+      <div className="">
         <HowItWorks></HowItWorks>
       </div>
-      <div className="mb-12">
+      <div className="">
         <SuccessStories></SuccessStories>
       </div>
     </div>
