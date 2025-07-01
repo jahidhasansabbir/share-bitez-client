@@ -14,6 +14,7 @@ import ManageMYFoodsContainer from "../pages/Manage-My-Foods/ManageMYFoodsContai
 import Error from "../pages/Error";
 import Support from "../pages/Support";
 import AboutUs from "../pages/AboutUs";
+import AllFoods from "../pages/AllFoods/AllFoods";
 
 export const router = createBrowserRouter([
   {
@@ -84,6 +85,11 @@ export const router = createBrowserRouter([
       {
         path: "about-us",
         Component:AboutUs
+      },
+      {
+        path: "all-foods",
+        loader: () => axios(`${import.meta.env.VITE_server}/available-foods`),
+        element:<PrivateRoute><AllFoods></AllFoods></PrivateRoute>
       }
     ],
   },

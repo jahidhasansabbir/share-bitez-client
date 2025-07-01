@@ -5,7 +5,7 @@ const HowItWorks = () => {
     <section className="">
       <div className=" text-center">
         <h2 className="text-4xl md:text-5xl font-bold text-blue-600 mb-12">
-          How Share Bitee Works
+          How Share Bite Works
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           <div className="bg-white rounded-3xl shadow-md p-8 hover:shadow-xl transform  transition-all duration-500">

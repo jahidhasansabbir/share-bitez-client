@@ -4,8 +4,8 @@ import { NavLink } from "react-router";
 import Swal from "sweetalert2";
 
 const FoodRow = ({ food, setMyFoods, myFoods }) => {
-  const { foodName, foodImage, foodQuantity, expireDate, pickupLocation, _id } =
-    food;
+  const { foodName, foodImage, foodQuantity, expireDate, pickupLocation, _id } = food;
+
   const handleDeleteFood = () => {
     Swal.fire({
       title: "Are you sure?",
@@ -21,9 +21,7 @@ const FoodRow = ({ food, setMyFoods, myFoods }) => {
           (singleFood) => singleFood._id != _id
         );
         setMyFoods(remainingMyFoods);
-        axios
-          .delete(`${import.meta.env.VITE_server}/delete/${_id}`)
-          .then(() => {});
+        axios.delete(`${import.meta.env.VITE_server}/delete/${_id}`).then(() => {});
         Swal.fire({
           title: "Deleted!",
           text: "Your post has been deleted.",
@@ -32,36 +30,40 @@ const FoodRow = ({ food, setMyFoods, myFoods }) => {
       }
     });
   };
+
   return (
-    <tr>
-      <td className="p-1">
-        <div className="flex items-center gap-3">
+    <tr className="hover">
+      <td className="px-0">
+        <div className="flex items-center gap-4">
           <div className="avatar">
-            <div className="mask mask-squircle h-12 w-12">
-              <img src={foodImage} alt="Avatar Tailwind CSS Component" />
+            <div className="mask mask-squircle w-14 h-14">
+              <img src={foodImage} alt={foodName} />
             </div>
           </div>
           <div>
-            <div className="font-bold">{foodName}</div>
-            <div className="text-sm opacity-50">{foodQuantity}</div>
+            <div className="font-semibold text-gray-800">{foodName}</div>
+            <div className="text-sm text-gray-500">Quantity: {foodQuantity}</div>
           </div>
         </div>
       </td>
-      <td className="p-1">{expireDate}</td>
-      <td className="p-1">{pickupLocation}</td>
-      <th className="flex flex-col gap-1 p-1">
-        <NavLink to={`/update/${_id}`}>
-          <div className="btn btn-ghost btn-xs bg-blue-700 text-white">
-            Update
-          </div>
-        </NavLink>
-        <button
-          onClick={handleDeleteFood}
-          className="btn btn-ghost btn-xs bg-red-700 text-white"
-        >
-          Delete
-        </button>
-      </th>
+      <td className="px-0 text-gray-700">{expireDate}</td>
+      <td className="px-0 text-gray-700">{pickupLocation}</td>
+      <td className="px-0">
+        <div className="flex flex-col gap-2">
+          <NavLink to={`/update/${_id}`}>
+            <button className="btn btn-xs bg-blue-600 hover:bg-blue-700 border-0 text-white w-full">
+              Update
+            </button>
+          </NavLink>
+          <button
+            onClick={handleDeleteFood}
+            className="btn btn-xs border-0 bg-red-600 hover:bg-red-700 text-white w-full"
+          >
+            Delete
+          </button>
+          
+        </div>
+      </td>
     </tr>
   );
 };

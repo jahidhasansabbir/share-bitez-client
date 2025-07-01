@@ -27,8 +27,9 @@ const AvailableFood = () => {
   }
 
   return (
-    <div className="">
-      <h1 className="text-2xl font-bold text-center">Available Food</h1>
+    <div className="my-8">
+      <h2 className="text-4xl text-center md:text-5xl font-bold text-blue-600 ">Available Foods
+      </h2>
 
       {/* 🔧 Search and Sort bar */}
       <div className="flex flex-col md:flex-row justify-center items-center gap-3 w-full my-4">

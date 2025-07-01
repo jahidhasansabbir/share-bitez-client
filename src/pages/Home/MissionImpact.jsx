@@ -24,7 +24,7 @@ const MissionImpact = () => {
         Our Mission & Impact
       </h2>
       <p className="text-xl md:text-2xl text-gray-700 mb-12 leading-relaxed">
-        At Share Bit, our mission is to fight hunger and reduce food waste by
+        At Share Bite, our mission is to fight hunger and reduce food waste by
         connecting generous donors with neighbors in need. Every meal shared
         builds a stronger, more compassionate community.
       </p>

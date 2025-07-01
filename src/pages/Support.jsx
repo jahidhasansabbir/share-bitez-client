@@ -2,11 +2,12 @@ import { Mail, Phone, MapPin, MessageSquare } from "lucide-react";
 
 const Support = () => {
   return (
-    <section className=" min-h-screen">
+    <section className=" min-h-screen py-8">
       <div className=" text-center">
-        <h2 className="text-4xl font-bold text-blue-600 mb-4">Need Help?</h2>
+        <h2 className="text-4xl text-center md:text-5xl font-bold text-blue-600 mb-4 ">Need Help?
+      </h2>
         <p className="text-lg text-gray-700 mb-12">
-          We’re here for you! Reach out if you have any questions or need assistance with Share Bitee.
+          We’re here for you! Reach out if you have any questions or need assistance with Share Bite.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">

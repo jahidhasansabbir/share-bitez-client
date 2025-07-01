@@ -1,10 +1,10 @@
-# 🍱 Share Biteeez - Food Sharing & Surplus Reduction Platform
+# 🍱 Share Bitez - Food Sharing & Surplus Reduction Platform
 
 🔗 **Live Site**: [https://share-bitez.web.app/](https://share-bitez.web.app/)
 
 ## 📜 Project Purpose
 
-**Share Biteeez** is a community-driven food sharing platform built to reduce food waste by connecting donors with surplus food to individuals in need. It allows users to post available food, request it, and manage their shared or requested items. This full-stack project uses **React**, **Firebase**, **Node.js**, **MongoDB**, and implements features like JWT authentication, protected routes, and responsive UI/UX.
+**Share Bitez** is a community-driven food sharing platform built to reduce food waste by connecting donors with surplus food to individuals in need. It allows users to post available food, request it, and manage their shared or requested items. This full-stack project uses **React**, **Firebase**, **Node.js**, **MongoDB**, and implements features like JWT authentication, protected routes, and responsive UI/UX.
 
 ---
 ## Important Note

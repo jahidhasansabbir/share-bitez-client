@@ -30,10 +30,11 @@ const Footer = () => {
       </aside>
 
       <nav>
-        <h6 className="footer-title">Legal</h6>
-        <a className="link link-hover">Terms & Conditions</a>
-        <a className="link link-hover">Privacy Policy</a>
-        <a className="link link-hover">Cookie Policy</a>
+        <h6 className="footer-title">Links</h6>
+        
+        <NavLink to='/' className="link link-hover">Home</NavLink>
+        <NavLink to='/support' className="link link-hover">Support</NavLink>
+        <NavLink to='/about-us' className="link link-hover">About Us</NavLink>
       </nav>
 
       <nav>

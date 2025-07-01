@@ -45,8 +45,8 @@ const AddFood = () => {
       });
   };
   return (
-    <div className="w-11/12 max-w-[720px] mx-auto my-8">
-      <h1 className="text-2xl font-bold text-center">Add Food</h1>
+    <div className=" max-w-[720px] mx-auto my-8">
+      <h1 className="text-4xl md:text-5xl font-bold text-blue-600 mb-4 text-center">Add Food</h1>
       <form className="fieldset" onSubmit={handleAddFood}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="flex flex-col">
@@ -113,7 +113,7 @@ const AddFood = () => {
             placeholder="Describe..."
           ></textarea>
         </div>
-        <button className="btn btn-neutral mt-4">Add</button>
+        <button className="btn btn-neutral mt-4 bg-blue-600 border-none">Add</button>
       </form>
     </div>
   );

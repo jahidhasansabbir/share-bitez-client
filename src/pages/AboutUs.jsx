@@ -1,8 +1,13 @@
+import { use } from "react";
+import { NavLink } from "react-router";
+import { AuthContext } from "../context/AuthContext";
+
 const AboutUs = () => {
+  const {user} = use(AuthContext)
   return (
-    <section className="min-h-screen">
+    <section className="min-h-screen py-8">
       <div className=" text-center">
-        <h1 className="text-4xl md:text-5xl font-bold text-blue-600 mb-6">About Share   Bitee</h1>
+        <h1 className="text-4xl md:text-5xl font-bold text-blue-600 mb-6">About Share Bite</h1>
         <p className="text-lg text-gray-700 mb-12">
           Share   Bite is a community-driven platform dedicated to reducing food waste and fighting hunger. Our mission is
           to connect people who have excess food with those who need it most — quickly, safely, and sustainably.
@@ -50,9 +55,9 @@ const AboutUs = () => {
             Whether you have food to give or need a helping hand, Share   Bite is here for you. Be a part of our mission
             and help create a world with less waste and more compassion.
           </p>
-          <button className="bg-blue-600 text-white font-semibold rounded-lg py-3 px-8 hover:bg-blue-700 transition-colors">
+          <NavLink to={`${user ? '/' : '/login'}`} className="bg-blue-600 text-white font-semibold rounded-lg py-3 px-8 hover:bg-blue-700 transition-colors">
             Get Started
-          </button>
+          </NavLink>
         </div>
       </div>
     </section>

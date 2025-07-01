@@ -1,30 +1,36 @@
-import React from "react";
-import { use } from "react";
+import React, { use, useState } from "react";
 import FoodRow from "./FoodRow";
-import { useState } from "react";
 
 const ManageMyFoods = ({ manageFoodPromise }) => {
   const filterFoods = use(manageFoodPromise);
   const [myFoods, setMyFoods] = useState(filterFoods);
+
   if (myFoods.length === 0) {
     return (
-      <div className="flex w-11/12 max-w-[350px] mx-auto justify-center items-center min-h-[50vh]">
-        <h1 className="text-3xl font-bold">You don't add food yet!</h1>
+      <div className="flex justify-center items-center min-h-screen ">
+        <h1 className="text-3xl font-semibold text-gray-700">
+          You haven't added any food yet!
+        </h1>
       </div>
     );
   }
+
   return (
-    <div className="overflow-x-auto w-11/12 mx-auto">
-      <table className="table">
+    <div className="overflow-x-auto py-8 bg-white min-h-screen">
+      <h2 className="text-4xl text-center md:text-5xl mb-4 font-bold text-blue-600 ">Manage My Food
+      </h2>
+
+      <table className="table w-full table-zebra text-gray-800">
         {/* head */}
-        <thead>
+        <thead className=" text-blue-800">
           <tr>
-            <th className="p-1">Food</th>
-            <th className="p-1">Expire Date</th>
-            <th className="p-1">Pickup Location</th>
-            <th></th>
+            <th className="py-3 px-0 text-left">Food</th>
+            <th className="py-3 px-0 text-left">Expire Date</th>
+            <th className="py-3 px-0 text-left">Pickup Location</th>
+            <th className="py-3 px-0 text-left">Actions</th>
           </tr>
         </thead>
+
         <tbody>
           {myFoods?.map((food) => (
             <FoodRow
@@ -32,7 +38,7 @@ const ManageMyFoods = ({ manageFoodPromise }) => {
               setMyFoods={setMyFoods}
               key={food._id}
               food={food}
-            ></FoodRow>
+            />
           ))}
         </tbody>
       </table>
