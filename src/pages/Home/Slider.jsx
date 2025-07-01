@@ -6,9 +6,10 @@ import "swiper/css/navigation";
 import slider1 from "../../assets/slider-1.png";
 import slider2 from "../../assets/slider-2.png";
 import slider3 from "../../assets/slider-3 .png";
+
 const Slider = () => {
   return (
-    <div className="mx-auto h-60vh">
+    <div className="mx-auto">
       <Swiper
         modules={[Autoplay]}
         autoplay={{
@@ -17,49 +18,52 @@ const Slider = () => {
         }}
         loop={true}
         spaceBetween={30}
+        className=""
       >
         <SwiperSlide>
-          <div className="relative z-20">
+          <div className="relative z-20 h-[60vh]">
             <img
-              className=" w-full  rounded-lg object-cover"
+              className="w-full h-full rounded-lg object-cover"
               src={slider1}
               alt=""
             />
-            <div className="absolute inset-0 flex px-2  bg-[#0803037c] rounded-lg items-center justify-center text-center text-white z-40">
-              <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold"><i>“Share more than food. Share love.”</i>
+            <div className="absolute inset-0 h-full flex px-2 bg-[#0803037c] rounded-lg items-center justify-center text-center text-white z-40">
+              <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold">
+                <i>“Share more than food. Share love.”</i>
               </h1>
             </div>
           </div>
         </SwiperSlide>
+
         <SwiperSlide>
-          <div className="relative z-20">
+          <div className="relative z-20 h-[60vh]">
             <img
-              className=" w-full rounded-lg object-cover"
+              className="w-full h-full rounded-lg object-cover"
               src={slider2}
               alt=""
             />
-            <div className="absolute inset-0 flex px-2  bg-[#0803037c] rounded-lg items-center justify-center text-center text-white z-40">
+            <div className="absolute inset-0 h-full flex px-2 bg-[#0803037c] rounded-lg items-center justify-center text-center text-white z-40">
               <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold">
                 <i>“One extra plate can feed a soul.”</i>
               </h1>
             </div>
           </div>
         </SwiperSlide>
+
         <SwiperSlide>
-          <div className="relative z-20">
+          <div className="relative z-20 h-[60vh]">
             <img
-              className="rounded-lg w-full h-full"
+              className="w-full h-full rounded-lg object-cover"
               src={slider3}
               alt=""
             />
-            <div className="absolute inset-0 flex px-2  items-center bg-[#0803037c] rounded-lg  justify-center text-center text-white z-40">
+            <div className="absolute inset-0 h-full flex px-2 bg-[#0803037c] rounded-lg items-center justify-center text-center text-white z-40">
               <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold">
                 <i>“Cooked with care. Shared with love.”</i>
               </h1>
             </div>
           </div>
         </SwiperSlide>
-        
       </Swiper>
     </div>
   );
