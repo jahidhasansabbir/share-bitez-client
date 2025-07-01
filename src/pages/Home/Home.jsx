@@ -6,6 +6,7 @@ import SuccessStories from "./SuccessStories";
 import { useQuery } from "@tanstack/react-query";
 import Loading from "../../components/Loading";
 import { motion } from "motion/react";
+import MissionImpact from "./MissionImpact";
 const Home = () => {
   const { data: foods, isPending } = useQuery({
     queryKey: ["foods"],
@@ -45,6 +46,7 @@ const Home = () => {
       <div className="">
         <SuccessStories></SuccessStories>
       </div>
+      <MissionImpact></MissionImpact>
     </div>
   );
 };

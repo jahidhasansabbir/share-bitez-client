@@ -8,7 +8,7 @@ import slider2 from "../../assets/slider-2.png";
 import slider3 from "../../assets/slider-3 .png";
 const Slider = () => {
   return (
-    <div className="mx-auto">
+    <div className="mx-auto h-60vh">
       <Swiper
         modules={[Autoplay]}
         autoplay={{
@@ -21,7 +21,7 @@ const Slider = () => {
         <SwiperSlide>
           <div className="relative z-20">
             <img
-              className="h-[180px] w-full md:h-[350px] lg:h-[500px] rounded-lg object-cover"
+              className=" w-full  rounded-lg object-cover"
               src={slider1}
               alt=""
             />
@@ -34,7 +34,7 @@ const Slider = () => {
         <SwiperSlide>
           <div className="relative z-20">
             <img
-              className="h-[180px] w-full md:h-[350px] lg:h-[500px] rounded-lg object-cover"
+              className=" w-full rounded-lg object-cover"
               src={slider2}
               alt=""
             />
@@ -48,7 +48,7 @@ const Slider = () => {
         <SwiperSlide>
           <div className="relative z-20">
             <img
-              className="h-[180px] w-full md:h-[350px] lg:h-[500px] rounded-lg object-cover"
+              className="rounded-lg w-full h-full"
               src={slider3}
               alt=""
             />
