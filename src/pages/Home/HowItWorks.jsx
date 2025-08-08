@@ -8,7 +8,7 @@ const HowItWorks = () => {
           How Share Bite Works
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          <div className="bg-white rounded-3xl shadow-md p-8 hover:shadow-xl transform  transition-all duration-500">
+          <div className="bg-white rounded-3xl border p-8 hover:shadow-xl transform  transition-all duration-500">
             <img
               src="https://img.icons8.com/color/96/food.png"
               alt="Donate"
@@ -22,7 +22,7 @@ const HowItWorks = () => {
             </p>
           </div>
 
-          <div className="bg-white rounded-3xl shadow-md p-8 hover:shadow-xl transform  transition-all duration-500">
+          <div className="bg-white rounded-3xl border p-8 hover:shadow-xl transform  transition-all duration-500">
             <img
               src="https://img.icons8.com/color/96/helping-hand.png"
               alt="Request"
@@ -36,7 +36,7 @@ const HowItWorks = () => {
             </p>
           </div>
 
-          <div className="bg-white rounded-3xl shadow-md p-8 hover:shadow-xl transform  transition-all duration-500">
+          <div className="bg-white rounded-3xl border p-8 hover:shadow-xl transform  transition-all duration-500">
             <img
               src="https://img.icons8.com/color/96/handshake.png"
               alt="Pickup"
