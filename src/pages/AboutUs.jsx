@@ -14,7 +14,7 @@ const AboutUs = () => {
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-          <div className="bg-white rounded-2xl shadow-sm p-8   transition-shadow duration-300">
+          <div className="bg-white rounded-2xl border p-8   transition-shadow duration-300">
             <h3 className="text-2xl font-semibold text-blue-600 mb-4">Our Story</h3>
             <p className="text-gray-700">
               Share   Bite started with a simple idea: what if we could bridge the gap between abundance and need? From our
@@ -22,7 +22,7 @@ const AboutUs = () => {
             </p>
           </div>
 
-          <div className="bg-white rounded-2xl shadow-sm p-8   transition-shadow duration-300">
+          <div className="bg-white rounded-2xl border p-8   transition-shadow duration-300">
             <h3 className="text-2xl font-semibold text-blue-600 mb-4">Our Mission</h3>
             <p className="text-gray-700">
               We aim to empower individuals, restaurants, and organizations to share surplus food with those in need,
@@ -30,7 +30,7 @@ const AboutUs = () => {
             </p>
           </div>
 
-          <div className="bg-white rounded-2xl shadow-sm p-8   transition-shadow duration-300">
+          <div className="bg-white rounded-2xl border p-8   transition-shadow duration-300">
             <h3 className="text-2xl font-semibold text-blue-600 mb-4">Our Vision</h3>
             <p className="text-gray-700">
               We envision a world where no one goes hungry and food is valued as a precious resource, not wasted. Share
@@ -38,7 +38,7 @@ const AboutUs = () => {
             </p>
           </div>
 
-          <div className="bg-white rounded-2xl shadow-sm p-8   transition-shadow duration-300">
+          <div className="bg-white rounded-2xl border p-8   transition-shadow duration-300">
             <h3 className="text-2xl font-semibold text-blue-600 mb-4">Why Choose Share   Bite?</h3>
             <ul className="list-disc list-inside text-gray-700 space-y-2">
               <li>Easy to share and request food</li>
