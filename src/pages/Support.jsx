@@ -122,7 +122,7 @@ const Support = () => {
 
               <button
                 type="submit"
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg transition text-base sm:text-lg"
+                className="w-full rounded-md bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg transition text-base sm:text-lg"
               >
                 Send Message
               </button>

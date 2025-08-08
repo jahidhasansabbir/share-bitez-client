@@ -10,7 +10,7 @@ const FeaturedFood = ({foods}) => {
                 {foods?.map(food=><FoodCard key={food._id} food={food}></FoodCard>)}
             </div>
             <div className='text-center mt-8'>
-                <NavLink to='/available-foods'><button className='btn btn-primary border-none bg-blue-700  text-white'>Show All</button></NavLink>
+                <NavLink to='/available-foods'><button className='btn border-none bg-blue-600  text-white'>Show All</button></NavLink>
             </div>
         </div>
     );

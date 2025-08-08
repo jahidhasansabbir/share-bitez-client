@@ -24,7 +24,7 @@ const FoodCard = ({ food }) => {
     </p>
     <div className="mt-6">
       <NavLink to={`/food/${_id}`}>
-        <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl py-3 transition-colors duration-300">
+        <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-md py-3 transition-colors duration-300">
           View Details
         </button>
       </NavLink>

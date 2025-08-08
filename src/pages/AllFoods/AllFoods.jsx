@@ -55,7 +55,7 @@ const AllFoods = () => {
                 <td>{food.expireDate}</td>
                 <td>
                   <NavLink to={`/food/${food._id}`}>
-                    <button className="btn btn-sm border-1 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white">
+                    <button className="btn btn-sm rounded-md border-1 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white">
                       Details
                     </button>
                   </NavLink>

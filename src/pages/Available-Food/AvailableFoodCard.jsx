@@ -38,7 +38,7 @@ const AvailableFoodCard = ({ food }) => {
     </div>
     <div className="mt-auto">
   <NavLink to={`/food/${_id}`}>
-    <button className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-blue-700 text-white font-semibold shadow-lg hover:scale-105 hover:shadow-xl transition-transform duration-300 ">
+    <button className="w-full inline-flex rounded-md items-center justify-center gap-2 px-6 py-3 bg-blue-700 text-white font-semibold shadow-lg hover:scale-105 hover:shadow-xl transition-transform duration-300 ">
       View Details
       <svg
         className="w-5 h-5 animate-pulse"

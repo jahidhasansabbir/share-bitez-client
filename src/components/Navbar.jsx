@@ -133,7 +133,7 @@ const Navbar = () => {
             </ul>
           </div>
           <NavLink to="/" className="font-bold text-xl">
-            Share<span className="text-blue-700">Bite</span>
+            Share<span className="text-blue-600">Bite</span>
           </NavLink>
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -147,7 +147,7 @@ const Navbar = () => {
                 onClick={() => {
                   logOut();
                 }}
-                className="btn border-none bg-blue-700 text-white btn-sm"
+                className="btn border-none bg-blue-600 text-white btn-sm"
               >
                 Log Out
               </button>
@@ -156,7 +156,7 @@ const Navbar = () => {
             <>
               <NavLink
                 to="/login"
-                className="btn border-none bg-blue-700 text-white btn-sm"
+                className="btn border-none bg-blue-600 text-white btn-sm"
               >
                 Log In
               </NavLink>
