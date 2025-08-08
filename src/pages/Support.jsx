@@ -1,13 +1,16 @@
-import { Mail, Phone, MapPin, MessageSquare } from "lucide-react";
-
+import { Mail, Phone, MapPin, MessageSquare, X } from "lucide-react";
+import { MdEmail, MdPhone } from "react-icons/md";
+import { FaFacebook, FaTwitter, FaWhatsapp, FaYoutube } from "react-icons/fa";
 const Support = () => {
   return (
     <section className=" min-h-screen py-8">
       <div className=" text-center">
-        <h2 className="text-4xl text-center md:text-5xl font-bold text-blue-600 mb-4 ">Need Help?
-      </h2>
+        <h2 className="text-4xl text-center md:text-5xl font-bold text-blue-600 mb-4 ">
+          Need Help?
+        </h2>
         <p className="text-lg text-gray-700 mb-12">
-          We’re here for you! Reach out if you have any questions or need assistance with Share Bite.
+          We’re here for you! Reach out if you have any questions or need
+          assistance with Share Bite.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
@@ -35,35 +38,94 @@ const Support = () => {
             <p className="text-gray-600">Dhaka, Bangladesh</p>
           </div>
         </div>
+        {/* contact  */}
+        <div className="relative mx-auto mt-12">
+          {/* Split Layout */}
+          <div className="mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10">
+            {/* Left Info */}
+            <div className="bg-white border border-gray-200 rounded-2xl p-8 shadow-lg space-y-6 text-gray-800">
+              <h3 className="text-2xl sm:text-3xl font-semibold text-blue-600 mb-4">
+                Let's Connect
+              </h3>
+              <p className="text-base sm:text-lg leading-relaxed">
+                Whether you have a project idea, a question, or just want to say
+                hello...
+              </p>
+              <div className="space-y-4 text-base sm:text-lg">
+                <div className="flex items-center gap-4">
+                  <FaYoutube className="text-blue-600 text-2xl sm:text-3xl" />
+                  <a href="https://www.youtube.com/">
+                    <span className="hover:underline hover:text-blue-600">
+                      share-bite
+                    </span>
+                  </a>
+                </div>
+                <div className="flex items-center gap-4">
+                  <FaTwitter className="text-blue-600 text-2xl sm:text-3xl" />
+                  <a href="https://x.com/jahid_sabbir1">
+                    <span className="hover:underline hover:text-blue-600">
+                      share-bite
+                    </span>
+                  </a>
+                </div>
+                <div className="flex items-center gap-4">
+                  <FaFacebook className="text-blue-600 text-2xl sm:text-3xl" />
+                  <a href="https://www.facebook.com/">
+                    <span className="hover:underline hover:text-blue-600">
+                      share-bite
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
 
-        <div className="mt-12 bg-white rounded-2xl shadow-lg p-8 text-left max-w-3xl mx-auto">
-          <div className="flex items-center mb-6 text-blue-600">
-            <MessageSquare className="w-6 h-6 mr-3" />
-            <h3 className="text-2xl font-semibold">Send us a message</h3>
+            {/* Right Form */}
+            <form className="bg-white border border-gray-200 rounded-2xl p-8 shadow-lg space-y-6">
+              <h3 className="text-2xl sm:text-3xl font-semibold text-blue-600 mb-4">
+                Send us a message
+              </h3>
+
+              <div>
+                <input
+                  id="user_email"
+                  name="user_email"
+                  type="email"
+                  required
+                  placeholder="you@example.com"
+                  className="w-full px-4 py-3 rounded-lg bg-white border border-gray-300 text-gray-800 placeholder-gray-400 focus:outline-none focus:border-blue-500 transition text-sm sm:text-base"
+                />
+              </div>
+
+              <div>
+                <input
+                  id="subject"
+                  name="subject"
+                  type="text"
+                  required
+                  placeholder="Briefly summarize"
+                  className="w-full px-4 py-3 rounded-lg bg-white border border-gray-300 text-gray-800 placeholder-gray-400 focus:outline-none focus:border-blue-500 transition text-sm sm:text-base"
+                />
+              </div>
+
+              <div>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  required
+                  placeholder="Write your message here..."
+                  className="w-full px-4 py-3 rounded-lg bg-white border border-gray-300 text-gray-800 placeholder-gray-400 focus:outline-none focus:border-blue-500 transition resize-none text-sm sm:text-base"
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg transition text-base sm:text-lg"
+              >
+                Send Message
+              </button>
+            </form>
           </div>
-          <form className="space-y-4">
-            <input
-              type="text"
-              placeholder="Your Name"
-              className="w-full border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-600"
-            />
-            <input
-              type="email"
-              placeholder="Your Email"
-              className="w-full border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-600"
-            />
-            <textarea
-              rows="4"
-              placeholder="Your Message"
-              className="w-full border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-600"
-            ></textarea>
-            <button
-              type="submit"
-              className="w-full bg-blue-600 text-white font-semibold rounded-lg py-3 hover:bg-blue-700 transition-colors"
-            >
-              Send Message
-            </button>
-          </form>
         </div>
       </div>
     </section>

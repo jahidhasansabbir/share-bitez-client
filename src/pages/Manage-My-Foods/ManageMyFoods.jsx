@@ -1,10 +1,13 @@
 import React, { use, useState } from "react";
 import FoodRow from "./FoodRow";
+import Loading from "../../components/Loading";
 
 const ManageMyFoods = ({ manageFoodPromise }) => {
   const filterFoods = use(manageFoodPromise);
   const [myFoods, setMyFoods] = useState(filterFoods);
-
+  if(!filterFoods){
+    return <Loading></Loading>
+  }
   if (myFoods.length === 0) {
     return (
       <div className="flex justify-center items-center min-h-screen ">
