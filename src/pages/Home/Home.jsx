@@ -7,6 +7,10 @@ import { useQuery } from "@tanstack/react-query";
 import Loading from "../../components/Loading";
 import { motion } from "motion/react";
 import MissionImpact from "./MissionImpact";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
+
 
 const Home = () => {
   const { data: foods, isPending } = useQuery({
@@ -16,6 +20,13 @@ const Home = () => {
       return res.json();
     },
   });
+  useEffect(() => {
+  AOS.init({
+    duration: 1000, 
+    once: false,    
+    offset: 100,    
+  });
+}, []);
 
   if (isPending) {
     return <Loading />;
@@ -39,19 +50,20 @@ const Home = () => {
         transition={{ duration: 0.8, ease: "easeOut" }}
         viewport={{ once: true }}
         className="mb-10 md:mb-16 lg:mb-20"
+        data-aos="fade-right"
       >
-        <FeaturedFood foods={foods} />
+        <FeaturedFood foods={foods}/>
       </motion.div>
 
-      <div className="mb-10 md:mb-16 lg:mb-20">
+      <div className="mb-10 md:mb-16 lg:mb-20" data-aos="fade-left">
         <HowItWorks />
       </div>
 
-      <div className="mb-10 md:mb-16 lg:mb-20">
+      <div className="mb-10 md:mb-16 lg:mb-20" data-aos="fade-up">
         <SuccessStories />
       </div>
 
-      <div className="mb-10 md:mb-16 lg:mb-20">
+      <div className="mb-10 md:mb-16 lg:mb-20" data-aos="fade-right">
         <MissionImpact />
       </div>
     </div>
