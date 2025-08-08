@@ -40,7 +40,7 @@ const SuccessStories = () => {
           {stories.map((story, index) => (
             <div
               key={index}
-              className="bg-white rounded-3xl shadow-md p-10 relative hover:shadow-lg transition-shadow duration-500"
+              className="bg-white rounded-3xl border p-10 relative hover:shadow-lg transition-shadow duration-500"
             >
               <p className="italic text-lg md:text-xl text-gray-700 mb-6 leading-relaxed">
                 “{story.quote}”
