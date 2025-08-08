@@ -14,7 +14,7 @@ const Support = () => {
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
-          <div className="bg-white rounded-2xl shadow-lg p-6 hover:scale-105 transition-transform duration-300">
+          <div className="bg-white rounded-2xl border p-6 hover:scale-105 transition-transform duration-300">
             <div className="flex items-center mb-4 text-blue-600">
               <Phone className="w-6 h-6 mr-3" />
               <h3 className="text-xl font-semibold">Call Us</h3>
@@ -22,7 +22,7 @@ const Support = () => {
             <p className="text-gray-600">+880-123-456789</p>
           </div>
 
-          <div className="bg-white rounded-2xl shadow-lg p-6 hover:scale-105 transition-transform duration-300">
+          <div className="bg-white rounded-2xl p-6 hover:scale-105 transition-transform border duration-300">
             <div className="flex items-center mb-4 text-blue-600">
               <Mail className="w-6 h-6 mr-3" />
               <h3 className="text-xl font-semibold">Email Support</h3>
@@ -30,7 +30,7 @@ const Support = () => {
             <p className="text-gray-600">support@sharebite.com</p>
           </div>
 
-          <div className="bg-white rounded-2xl shadow-lg p-6 hover:scale-105 transition-transform duration-300">
+          <div className="bg-white rounded-2xl  p-6 hover:scale-105 transition-transform border duration-300">
             <div className="flex items-center mb-4 text-blue-600">
               <MapPin className="w-6 h-6 mr-3" />
               <h3 className="text-xl font-semibold">Our Location</h3>
@@ -38,11 +38,13 @@ const Support = () => {
             <p className="text-gray-600">Dhaka, Bangladesh</p>
           </div>
         </div>
+
         {/* contact  */}
         <div className="relative mx-auto mt-12">
-          {/* Split Layout */}
+          <h2 className="text-4xl text-center md:text-5xl font-bold text-blue-600 mb-4 ">
+            Contact Us
+          </h2>
           <div className="mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10">
-            {/* Left Info */}
             <div className="bg-white border border-gray-200 rounded-2xl p-8 shadow-lg space-y-6 text-gray-800">
               <h3 className="text-2xl sm:text-3xl font-semibold text-blue-600 mb-4">
                 Let's Connect
