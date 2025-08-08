@@ -29,7 +29,7 @@ const MissionImpact = () => {
         builds a stronger, more compassionate community.
       </p>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-        <div className="bg-white rounded-3xl shadow-xl p-8 hover:shadow-2xl transition-shadow duration-500 flex flex-col items-center">
+        <div className="bg-white rounded-3xl border p-8 hover:shadow-2xl transition-shadow duration-500 flex flex-col items-center">
           <TbSoup className="text-blue-600 text-6xl mb-4" />
           <h3 className="text-3xl font-bold text-blue-600 mb-4">
             {inView ? (
@@ -41,7 +41,7 @@ const MissionImpact = () => {
           </h3>
           <p className="text-lg text-gray-700">Meals shared since launch</p>
         </div>
-        <div className="bg-white rounded-3xl shadow-xl p-8 hover:shadow-2xl transition-shadow duration-500 flex flex-col items-center">
+        <div className="bg-white rounded-3xl border p-8 hover:shadow-2xl transition-shadow duration-500 flex flex-col items-center">
           <PiUsersFourFill className="text-blue-600 text-6xl mb-4" />
           <h3 className="text-3xl font-bold text-blue-600 mb-4">
             {inView ? (
@@ -55,7 +55,7 @@ const MissionImpact = () => {
             Families helped in communities across Bangladesh
           </p>
         </div>
-        <div className="bg-white rounded-3xl shadow-xl p-8 hover:shadow-2xl transition-shadow duration-500 flex flex-col items-center">
+        <div className="bg-white rounded-3xl border p-8 hover:shadow-2xl transition-shadow duration-500 flex flex-col items-center">
           <IoFastFood className="text-blue-600 text-6xl mb-4" />
           <h3 className="text-3xl font-bold text-blue-600 mb-4">
             {inView ? (

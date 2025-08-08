@@ -9,7 +9,7 @@ const FoodCard = ({ food }) => {
   <figure className="relative">
     <img
       src={foodImage}
-      className="object-cover w-full h-[240px] transform group-hover:scale-105 transition-transform duration-500"
+      className="object-cover w-full h-[240px]"
       alt={foodName}
     />
     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-t-3xl"></div>
